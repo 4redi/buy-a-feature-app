@@ -206,24 +206,17 @@ namespace Buy_a_feature_app
 
         private void button5_Click_1(object sender, EventArgs e)
         {
-
-            int columnIndex = 5;
-            int columnIndex1 = 6;
-            int sum = 0;
-
-            foreach (DataGridViewRow row in dataGridView1.Rows)
-            {
-                if (int.TryParse(row.Cells[columnIndex].Value?.ToString(), out int cellValue) && int.TryParse(row.Cells[columnIndex1].Value?.ToString(), out int cellValue1))
-                {
-
-                    sum += cellValue + cellValue1;
-                }
-            }
-            MessageBox.Show(sum.ToString());
+           
         }
 
+        private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                row.Cells["Sum"].Value = Convert.ToDouble(row.Cells[5].Value) + Convert.ToDouble(row.Cells[6].Value);
+            }
+        }
 
-       
 
 
 

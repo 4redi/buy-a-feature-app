@@ -34,18 +34,16 @@
             button3 = new Button();
             button2 = new Button();
             button1 = new Button();
-            dataGridView1 = new DataGridView();
-            ID_Generated = new DataGridViewTextBoxColumn();
-            average = new DataGridViewTextBoxColumn();
             panel2 = new Panel();
-            label1 = new Label();
-            button5 = new Button();
             textBox1 = new TextBox();
             User = new Label();
             Sum = new DataGridViewTextBoxColumn();
+            average = new DataGridViewTextBoxColumn();
+            ID_Generated = new DataGridViewTextBoxColumn();
+            dataGridView1 = new DataGridView();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -116,67 +114,15 @@
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
-            // dataGridView1
-            // 
-            dataGridView1.BackgroundColor = Color.LightSlateGray;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ID_Generated, average, Sum });
-            dataGridView1.GridColor = SystemColors.ActiveBorder;
-            dataGridView1.Location = new Point(272, 116);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.RowTemplate.Height = 29;
-            dataGridView1.Size = new Size(712, 476);
-            dataGridView1.TabIndex = 2;
-            dataGridView1.CellEndEdit += dataGridView1_CellContentClick;
-            dataGridView1.RowPostPaint += dataGridView1_RowPostPaint;
-            // 
-            // ID_Generated
-            // 
-            ID_Generated.HeaderText = "ID_Generated";
-            ID_Generated.MinimumWidth = 6;
-            ID_Generated.Name = "ID_Generated";
-            ID_Generated.ReadOnly = true;
-            ID_Generated.Width = 125;
-            // 
-            // average
-            // 
-            average.HeaderText = "AVERAGE";
-            average.MinimumWidth = 6;
-            average.Name = "average";
-            average.ReadOnly = true;
-            average.Width = 125;
-            // 
             // panel2
             // 
             panel2.BackColor = Color.Tan;
-            panel2.Controls.Add(label1);
-            panel2.Controls.Add(button5);
             panel2.Controls.Add(textBox1);
             panel2.Controls.Add(User);
             panel2.Location = new Point(272, 11);
             panel2.Name = "panel2";
             panel2.Size = new Size(712, 99);
             panel2.TabIndex = 3;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(630, 44);
-            label1.Name = "label1";
-            label1.Size = new Size(59, 23);
-            label1.TabIndex = 3;
-            label1.Text = "label1";
-            // 
-            // button5
-            // 
-            button5.Location = new Point(520, 41);
-            button5.Name = "button5";
-            button5.Size = new Size(94, 29);
-            button5.TabIndex = 2;
-            button5.Text = "button5";
-            button5.UseVisualStyleBackColor = true;
-            button5.Click += button5_Click_1;
             // 
             // textBox1
             // 
@@ -204,6 +150,37 @@
             Sum.Name = "Sum";
             Sum.Width = 125;
             // 
+            // average
+            // 
+            average.HeaderText = "AVERAGE";
+            average.MinimumWidth = 6;
+            average.Name = "average";
+            average.ReadOnly = true;
+            average.Width = 125;
+            // 
+            // ID_Generated
+            // 
+            ID_Generated.HeaderText = "ID_Generated";
+            ID_Generated.MinimumWidth = 6;
+            ID_Generated.Name = "ID_Generated";
+            ID_Generated.ReadOnly = true;
+            ID_Generated.Width = 125;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.BackgroundColor = Color.LightSlateGray;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ID_Generated, average, Sum });
+            dataGridView1.GridColor = SystemColors.ActiveBorder;
+            dataGridView1.Location = new Point(272, 116);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.RowTemplate.Height = 29;
+            dataGridView1.Size = new Size(712, 476);
+            dataGridView1.TabIndex = 2;
+            dataGridView1.CellEndEdit += dataGridView1_CellContentClick;
+            dataGridView1.RowPostPaint += dataGridView1_RowPostPaint;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 23F);
@@ -218,9 +195,9 @@
             Name = "Form1";
             Text = "Form1";
             panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }
 
@@ -231,15 +208,13 @@
         private Button button3;
         private Button button2;
         private Button button1;
-        private DataGridView dataGridView1;
         private Panel panel2;
         private TextBox textBox1;
         private Label User;
         private Button button7;
-        private DataGridViewTextBoxColumn ID_Generated;
-        private DataGridViewTextBoxColumn average;
-        private Label label1;
-        private Button button5;
         private DataGridViewTextBoxColumn Sum;
+        private DataGridViewTextBoxColumn average;
+        private DataGridViewTextBoxColumn ID_Generated;
+        private DataGridView dataGridView1;
     }
 }
