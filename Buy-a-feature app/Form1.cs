@@ -4,6 +4,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.IO;
 using System.Windows.Forms;
+using System;
 
 namespace Buy_a_feature_app
 {
@@ -19,7 +20,6 @@ namespace Buy_a_feature_app
             this.Text = "Buy-a-feature app";
             User.Text = "Add Columns";
             CellValidatingEvent();
-
         }
         private void ReadCSVFile(string filePath)
         {
@@ -202,12 +202,31 @@ namespace Buy_a_feature_app
             //funx per saving changes
         }
 
-        private void Average()
+
+
+        private void button5_Click_1(object sender, EventArgs e)
         {
-            /*funx per te gjetur average
-             FORMULA: sum(values_rows)/total_count per headers te vendosura nga user
-             */
+
+            int columnIndex = 5;
+            int columnIndex1 = 6;
+            int sum = 0;
+
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                if (int.TryParse(row.Cells[columnIndex].Value?.ToString(), out int cellValue) && int.TryParse(row.Cells[columnIndex1].Value?.ToString(), out int cellValue1))
+                {
+
+                    sum += cellValue + cellValue1;
+                }
+            }
+            MessageBox.Show(sum.ToString());
         }
+
+
+       
+
+
+
 
     }
 }

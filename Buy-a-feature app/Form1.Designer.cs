@@ -38,8 +38,11 @@
             ID_Generated = new DataGridViewTextBoxColumn();
             average = new DataGridViewTextBoxColumn();
             panel2 = new Panel();
+            label1 = new Label();
+            button5 = new Button();
             textBox1 = new TextBox();
             User = new Label();
+            Sum = new DataGridViewTextBoxColumn();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel2.SuspendLayout();
@@ -117,7 +120,7 @@
             // 
             dataGridView1.BackgroundColor = Color.LightSlateGray;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ID_Generated, average });
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ID_Generated, average, Sum });
             dataGridView1.GridColor = SystemColors.ActiveBorder;
             dataGridView1.Location = new Point(272, 116);
             dataGridView1.Name = "dataGridView1";
@@ -147,12 +150,33 @@
             // panel2
             // 
             panel2.BackColor = Color.Tan;
+            panel2.Controls.Add(label1);
+            panel2.Controls.Add(button5);
             panel2.Controls.Add(textBox1);
             panel2.Controls.Add(User);
             panel2.Location = new Point(272, 11);
             panel2.Name = "panel2";
             panel2.Size = new Size(712, 99);
             panel2.TabIndex = 3;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(630, 44);
+            label1.Name = "label1";
+            label1.Size = new Size(59, 23);
+            label1.TabIndex = 3;
+            label1.Text = "label1";
+            // 
+            // button5
+            // 
+            button5.Location = new Point(520, 41);
+            button5.Name = "button5";
+            button5.Size = new Size(94, 29);
+            button5.TabIndex = 2;
+            button5.Text = "button5";
+            button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click_1;
             // 
             // textBox1
             // 
@@ -172,6 +196,13 @@
             User.Size = new Size(137, 28);
             User.TabIndex = 0;
             User.Text = "Add Columns";
+            // 
+            // Sum
+            // 
+            Sum.HeaderText = "Sum";
+            Sum.MinimumWidth = 6;
+            Sum.Name = "Sum";
+            Sum.Width = 125;
             // 
             // Form1
             // 
@@ -207,5 +238,8 @@
         private Button button7;
         private DataGridViewTextBoxColumn ID_Generated;
         private DataGridViewTextBoxColumn average;
+        private Label label1;
+        private Button button5;
+        private DataGridViewTextBoxColumn Sum;
     }
 }
