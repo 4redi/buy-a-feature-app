@@ -197,6 +197,17 @@ namespace Buy_a_feature_app
             dataGridView1.CellValidating += dataGridView1_CellValidating;
         }
 
+        private void SaveChanges()
+        {
+            //funx per saving changes
+        }
+
+        private void Average()
+        {
+            /*funx per te gjetur average
+             FORMULA: sum(values_rows)/total_count per headers te vendosura nga user
+             */
+        }
 
     }
 }
