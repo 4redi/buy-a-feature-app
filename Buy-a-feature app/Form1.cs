@@ -206,7 +206,7 @@ namespace Buy_a_feature_app
 
         private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-            int userColumnStartIndex = 5;
+            int userColumnStartIndex = 4;
 
             if (e.ColumnIndex >= userColumnStartIndex)
             {
@@ -224,7 +224,7 @@ namespace Buy_a_feature_app
                             count++;
                         }
                     }
-                    double average = Math.Round(sum/count);
+                    double average = Math.Round(sum / count);
                     row.Cells["AVERAGE"].Value = average;
                 }
             }

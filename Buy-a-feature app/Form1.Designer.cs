@@ -37,10 +37,9 @@
             panel2 = new Panel();
             textBox1 = new TextBox();
             User = new Label();
-            Sum = new DataGridViewTextBoxColumn();
-            average = new DataGridViewTextBoxColumn();
-            ID_Generated = new DataGridViewTextBoxColumn();
             dataGridView1 = new DataGridView();
+            ID_Generated = new DataGridViewTextBoxColumn();
+            average = new DataGridViewTextBoxColumn();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -143,34 +142,11 @@
             User.TabIndex = 0;
             User.Text = "Add Columns";
             // 
-            // Sum
-            // 
-            Sum.HeaderText = "Sum";
-            Sum.MinimumWidth = 6;
-            Sum.Name = "Sum";
-            Sum.Width = 125;
-            // 
-            // average
-            // 
-            average.HeaderText = "AVERAGE";
-            average.MinimumWidth = 6;
-            average.Name = "average";
-            average.ReadOnly = true;
-            average.Width = 125;
-            // 
-            // ID_Generated
-            // 
-            ID_Generated.HeaderText = "ID_Generated";
-            ID_Generated.MinimumWidth = 6;
-            ID_Generated.Name = "ID_Generated";
-            ID_Generated.ReadOnly = true;
-            ID_Generated.Width = 125;
-            // 
             // dataGridView1
             // 
             dataGridView1.BackgroundColor = Color.LightSlateGray;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ID_Generated, average, Sum });
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ID_Generated, average });
             dataGridView1.GridColor = SystemColors.ActiveBorder;
             dataGridView1.Location = new Point(272, 116);
             dataGridView1.Name = "dataGridView1";
@@ -180,6 +156,22 @@
             dataGridView1.TabIndex = 2;
             dataGridView1.CellEndEdit += dataGridView1_CellContentClick;
             dataGridView1.RowPostPaint += dataGridView1_RowPostPaint;
+            // 
+            // ID_Generated
+            // 
+            ID_Generated.HeaderText = "ID_Generated";
+            ID_Generated.MinimumWidth = 6;
+            ID_Generated.Name = "ID_Generated";
+            ID_Generated.ReadOnly = true;
+            ID_Generated.Width = 125;
+            // 
+            // average
+            // 
+            average.HeaderText = "AVERAGE";
+            average.MinimumWidth = 6;
+            average.Name = "average";
+            average.ReadOnly = true;
+            average.Width = 125;
             // 
             // Form1
             // 
@@ -212,9 +204,8 @@
         private TextBox textBox1;
         private Label User;
         private Button button7;
-        private DataGridViewTextBoxColumn Sum;
-        private DataGridViewTextBoxColumn average;
-        private DataGridViewTextBoxColumn ID_Generated;
         private DataGridView dataGridView1;
+        private DataGridViewTextBoxColumn ID_Generated;
+        private DataGridViewTextBoxColumn average;
     }
 }
