@@ -20,6 +20,7 @@ namespace Buy_a_feature_app
             this.Text = "Buy-a-feature app";
             User.Text = "Add Columns";
             CellValidatingEvent();
+            dataGridView1.CellEndEdit += dataGridView1_CellEndEdit;
         }
         private void ReadCSVFile(string filePath)
         {
@@ -150,6 +151,7 @@ namespace Buy_a_feature_app
 
         private void dataGridView1_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
+            //? A MUND TE QUHET,APO DUHET DHE TI BEJ SORT?? 
             this.dataGridView1.Rows[e.RowIndex].Cells[0].Value = (e.RowIndex + 1).ToString();
 
         }
@@ -199,7 +201,7 @@ namespace Buy_a_feature_app
 
         private void SaveChanges()
         {
-            //funx per saving changes
+            /* TODO: complete this funx */
         }
 
 
@@ -211,11 +213,31 @@ namespace Buy_a_feature_app
 
         private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-            foreach (DataGridViewRow row in dataGridView1.Rows)
+            int userColumnStartIndex = 5;
+
+            if (e.ColumnIndex >= userColumnStartIndex)
             {
-                row.Cells["Sum"].Value = Convert.ToDouble(row.Cells[5].Value) + Convert.ToDouble(row.Cells[6].Value);
+                foreach (DataGridViewRow row in dataGridView1.Rows)
+                {
+                    double sum = 0;
+
+                    for (int i = userColumnStartIndex; i < dataGridView1.Columns.Count; i++)
+                    {
+                        double value;
+                        if (double.TryParse(row.Cells[i].Value?.ToString(), out value))
+                        {
+                            sum += value;
+                        }
+                    }
+
+                    row.Cells["Sum"].Value = sum;
+                }
             }
         }
+
+
+
+
 
 
 
