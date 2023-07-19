@@ -204,13 +204,6 @@ namespace Buy_a_feature_app
             /* TODO: complete this funx */
         }
 
-
-
-        private void button5_Click_1(object sender, EventArgs e)
-        {
-           
-        }
-
         private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
             int userColumnStartIndex = 5;
@@ -220,6 +213,7 @@ namespace Buy_a_feature_app
                 foreach (DataGridViewRow row in dataGridView1.Rows)
                 {
                     double sum = 0;
+                    int count = 0;
 
                     for (int i = userColumnStartIndex; i < dataGridView1.Columns.Count; i++)
                     {
@@ -227,21 +221,13 @@ namespace Buy_a_feature_app
                         if (double.TryParse(row.Cells[i].Value?.ToString(), out value))
                         {
                             sum += value;
+                            count++;
                         }
                     }
-
-                    row.Cells["Sum"].Value = sum;
+                    double average = Math.Round(sum/count);
+                    row.Cells["AVERAGE"].Value = average;
                 }
             }
         }
-
-
-
-
-
-
-
-
-
     }
 }
