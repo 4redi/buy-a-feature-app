@@ -12,7 +12,7 @@ namespace Buy_a_feature_app
     public partial class Form1 : Form
     {
         private DataTable dataTable;
-
+        private string openedFilePath;
 
         public Form1()
         {
@@ -21,6 +21,7 @@ namespace Buy_a_feature_app
             User.Text = "Add Columns";
             CellValidatingEvent();
             dataGridView1.CellEndEdit += dataGridView1_CellEndEdit;
+
         }
         private void ReadCSVFile(string filePath)
         {
@@ -50,14 +51,13 @@ namespace Buy_a_feature_app
 
                 if (!hasDescription || !hasTitle)
                 {
-                    MessageBox.Show("The file requires Title and Description!",
-                        "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
+                    MessageBox.Show("The file requires Title and Description!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     dataGridView1.DataSource = null;
                 }
                 else
                 {
                     dataGridView1.DataSource = dataTable;
+                    openedFilePath = filePath;
                 }
             }
         }
@@ -151,7 +151,6 @@ namespace Buy_a_feature_app
 
         private void dataGridView1_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
-            //? A MUND TE QUHET,APO DUHET DHE TI BEJ SORT?? 
             this.dataGridView1.Rows[e.RowIndex].Cells[0].Value = (e.RowIndex + 1).ToString();
 
         }
@@ -199,10 +198,34 @@ namespace Buy_a_feature_app
             dataGridView1.CellValidating += dataGridView1_CellValidating;
         }
 
-        private void SaveChanges()
+        private void SaveChanges(string filePath)
         {
-            /* TODO: complete this funx */
+            try
+            {
+                if (dataTable == null || string.IsNullOrEmpty(filePath))
+                    return;
+
+                dataGridView1.EndEdit();
+
+                StringBuilder sb = new StringBuilder();
+
+                sb.AppendLine(string.Join(",", dataTable.Columns.Cast<DataColumn>().Select(c => c.ColumnName)));
+
+                foreach (DataRow row in dataTable.Rows)
+                {
+                    string[] fields = row.ItemArray.Select(field => field.ToString()).ToArray();
+                    sb.AppendLine(string.Join(",", fields));
+                }
+                File.WriteAllText(filePath, sb.ToString());
+
+                MessageBox.Show("Changes saved successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error while saving changes: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
 
         private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
@@ -228,6 +251,11 @@ namespace Buy_a_feature_app
                     row.Cells["AVERAGE"].Value = average;
                 }
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            SaveChanges(openedFilePath);
         }
     }
 }

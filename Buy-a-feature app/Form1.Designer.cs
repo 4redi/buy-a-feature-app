@@ -99,6 +99,7 @@
             button2.TabIndex = 2;
             button2.Text = "Save";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // button1
             // 
@@ -171,6 +172,7 @@
             average.MinimumWidth = 6;
             average.Name = "average";
             average.ReadOnly = true;
+            average.SortMode = DataGridViewColumnSortMode.NotSortable;
             average.Width = 125;
             // 
             // Form1
