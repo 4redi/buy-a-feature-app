@@ -62,7 +62,7 @@ namespace Buy_a_feature_app
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Load_File_Click(object sender, EventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog();
             ofd.Filter = "CSV Files (*.csv)|*.csv";
@@ -89,17 +89,13 @@ namespace Buy_a_feature_app
             }
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void Button_Delete_Click(object sender, EventArgs e)
         {
             iDelete();
         }
 
-        private void button5_Click(object sender, EventArgs e)
-        {
-            dataGridView1.Rows.Add();
-        }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void Exit_Click(object sender, EventArgs e)
         {
             try
             {
@@ -118,7 +114,7 @@ namespace Buy_a_feature_app
             }
         }
 
-        private void button7_Click(object sender, EventArgs e)
+        private void Insert_Users_Click(object sender, EventArgs e)
         {
             string newHeader = textBox1.Text.Trim();
 
@@ -253,7 +249,7 @@ namespace Buy_a_feature_app
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void Save_Click(object sender, EventArgs e)
         {
             SaveChanges(openedFilePath);
         }

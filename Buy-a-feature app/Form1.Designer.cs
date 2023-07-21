@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            button7 = new Button();
-            button4 = new Button();
-            button3 = new Button();
-            button2 = new Button();
-            button1 = new Button();
+            Insert = new Button();
+            Delete = new Button();
+            Exit = new Button();
+            Save = new Button();
+            Load_File = new Button();
             panel2 = new Panel();
             textBox1 = new TextBox();
             User = new Label();
@@ -48,71 +48,71 @@
             // panel1
             // 
             panel1.BackColor = Color.BurlyWood;
-            panel1.Controls.Add(button7);
-            panel1.Controls.Add(button4);
-            panel1.Controls.Add(button3);
-            panel1.Controls.Add(button2);
+            panel1.Controls.Add(Insert);
+            panel1.Controls.Add(Delete);
+            panel1.Controls.Add(Exit);
+            panel1.Controls.Add(Save);
             panel1.Location = new Point(8, 70);
             panel1.Name = "panel1";
             panel1.Size = new Size(238, 522);
             panel1.TabIndex = 0;
             // 
-            // button7
+            // Insert
             // 
-            button7.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button7.Location = new Point(20, 291);
-            button7.Name = "button7";
-            button7.Size = new Size(202, 57);
-            button7.TabIndex = 7;
-            button7.Text = "Insert";
-            button7.UseVisualStyleBackColor = true;
-            button7.Click += button7_Click;
+            Insert.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            Insert.Location = new Point(20, 291);
+            Insert.Name = "Insert";
+            Insert.Size = new Size(202, 57);
+            Insert.TabIndex = 7;
+            Insert.Text = "Insert";
+            Insert.UseVisualStyleBackColor = true;
+            Insert.Click += Insert_Users_Click;
             // 
-            // button4
+            // Delete
             // 
-            button4.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button4.Location = new Point(20, 211);
-            button4.Name = "button4";
-            button4.Size = new Size(202, 57);
-            button4.TabIndex = 4;
-            button4.Text = "Delete";
-            button4.UseVisualStyleBackColor = true;
-            button4.Click += button4_Click;
+            Delete.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            Delete.Location = new Point(20, 211);
+            Delete.Name = "Delete";
+            Delete.Size = new Size(202, 57);
+            Delete.TabIndex = 4;
+            Delete.Text = "Delete";
+            Delete.UseVisualStyleBackColor = true;
+            Delete.Click += Button_Delete_Click;
             // 
-            // button3
+            // Exit
             // 
-            button3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button3.Location = new Point(152, 485);
-            button3.Name = "button3";
-            button3.Size = new Size(83, 34);
-            button3.TabIndex = 3;
-            button3.Text = "Exit";
-            button3.UseVisualStyleBackColor = true;
-            button3.Click += button3_Click;
+            Exit.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            Exit.Location = new Point(152, 485);
+            Exit.Name = "Exit";
+            Exit.Size = new Size(83, 34);
+            Exit.TabIndex = 3;
+            Exit.Text = "Exit";
+            Exit.UseVisualStyleBackColor = true;
+            Exit.Click += Exit_Click;
             // 
-            // button2
+            // Save
             // 
-            button2.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
-            button2.Location = new Point(20, 131);
-            button2.Name = "button2";
-            button2.Size = new Size(202, 57);
-            button2.TabIndex = 2;
-            button2.Text = "Save";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            Save.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            Save.Location = new Point(20, 131);
+            Save.Name = "Save";
+            Save.Size = new Size(202, 57);
+            Save.TabIndex = 2;
+            Save.Text = "Save";
+            Save.UseVisualStyleBackColor = true;
+            Save.Click += Save_Click;
             // 
-            // button1
+            // Load_File
             // 
-            button1.BackColor = Color.DarkSalmon;
-            button1.Font = new Font("Microsoft New Tai Lue", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.ForeColor = SystemColors.ActiveCaptionText;
-            button1.Location = new Point(28, 12);
-            button1.Name = "button1";
-            button1.Size = new Size(193, 51);
-            button1.TabIndex = 1;
-            button1.Text = "Load CSV";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            Load_File.BackColor = Color.DarkSalmon;
+            Load_File.Font = new Font("Microsoft New Tai Lue", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            Load_File.ForeColor = SystemColors.ActiveCaptionText;
+            Load_File.Location = new Point(28, 12);
+            Load_File.Name = "Load_File";
+            Load_File.Size = new Size(193, 51);
+            Load_File.TabIndex = 1;
+            Load_File.Text = "Load CSV";
+            Load_File.UseVisualStyleBackColor = false;
+            Load_File.Click += Load_File_Click;
             // 
             // panel2
             // 
@@ -183,7 +183,7 @@
             ClientSize = new Size(995, 606);
             Controls.Add(panel2);
             Controls.Add(dataGridView1);
-            Controls.Add(button1);
+            Controls.Add(Load_File);
             Controls.Add(panel1);
             Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
             Name = "Form1";
@@ -198,14 +198,14 @@
         #endregion
 
         private Panel panel1;
-        private Button button4;
-        private Button button3;
-        private Button button2;
-        private Button button1;
+        private Button Delete;
+        private Button Exit;
+        private Button Save;
+        private Button Load_File;
         private Panel panel2;
         private TextBox textBox1;
         private Label User;
-        private Button button7;
+        private Button Insert;
         private DataGridView dataGridView1;
         private DataGridViewTextBoxColumn ID_Generated;
         private DataGridViewTextBoxColumn average;
