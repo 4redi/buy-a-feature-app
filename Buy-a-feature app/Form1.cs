@@ -22,6 +22,7 @@ namespace Buy_a_feature_app
             CellValidatingEvent();
             dataGridView1.CellEndEdit += dataGridView1_CellEndEdit;
 
+
         }
         private void ReadCSVFile(string filePath)
         {
@@ -248,10 +249,23 @@ namespace Buy_a_feature_app
                 }
             }
         }
-
         private void Save_Click(object sender, EventArgs e)
         {
             SaveChanges(openedFilePath);
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            
+        }
     }
+}
+
+public enum Products
+{
+    Excel,
+    C1,
+    PowerBi,
+    SpreadJS,
+    WinUI
 }
