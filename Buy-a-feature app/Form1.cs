@@ -1,6 +1,5 @@
 using Microsoft.VisualBasic.FileIO;
 using System.Data;
-using System.Security.Cryptography;
 using System.Text;
 using System.IO;
 using System.Windows.Forms;
@@ -142,8 +141,8 @@ namespace Buy_a_feature_app
         }
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            dataGridView1.Columns["Title"].ReadOnly = true;
-            dataGridView1.Columns["Description"].ReadOnly = true;
+            //dataGridView1.Columns["Title"].ReadOnly = true;
+            //dataGridView1.Columns["Description"].ReadOnly = true;
         }
 
         private void dataGridView1_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
@@ -176,7 +175,7 @@ namespace Buy_a_feature_app
                             }
                         }
 
-                        if (value < 0 || value > 100 || sum + value > 100)
+                        if (value < 0 && value > 100 && sum + value > 100)
                         {
                             e.Cancel = true;
                             dataGridView1.Rows[e.RowIndex].ErrorText = "Invalid integer value or sum exceeds 100!";
@@ -256,16 +255,21 @@ namespace Buy_a_feature_app
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+
+        }
+
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void User_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
         }
     }
-}
-
-public enum Products
-{
-    Excel,
-    C1,
-    PowerBi,
-    SpreadJS,
-    WinUI
 }

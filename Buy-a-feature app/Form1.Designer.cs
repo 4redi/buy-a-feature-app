@@ -106,9 +106,9 @@
             Load_File.BackColor = Color.DarkSalmon;
             Load_File.Font = new Font("Microsoft New Tai Lue", 12F, FontStyle.Bold, GraphicsUnit.Point);
             Load_File.ForeColor = SystemColors.ActiveCaptionText;
-            Load_File.Location = new Point(28, 12);
+            Load_File.Location = new Point(28, 11);
             Load_File.Name = "Load_File";
-            Load_File.Size = new Size(193, 51);
+            Load_File.Size = new Size(202, 52);
             Load_File.TabIndex = 1;
             Load_File.Text = "Load CSV";
             Load_File.UseVisualStyleBackColor = false;
@@ -119,41 +119,43 @@
             panel2.BackColor = Color.Tan;
             panel2.Controls.Add(textBox1);
             panel2.Controls.Add(User);
-            panel2.Location = new Point(272, 11);
+            panel2.Location = new Point(252, 11);
             panel2.Name = "panel2";
-            panel2.Size = new Size(712, 99);
+            panel2.Size = new Size(731, 99);
             panel2.TabIndex = 3;
             // 
             // textBox1
             // 
             textBox1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            textBox1.Location = new Point(172, 41);
+            textBox1.Location = new Point(337, 31);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(225, 34);
+            textBox1.Size = new Size(218, 34);
             textBox1.TabIndex = 1;
+            textBox1.TextChanged += textBox1_TextChanged;
             // 
             // User
             // 
             User.AutoSize = true;
             User.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             User.ForeColor = SystemColors.ActiveCaptionText;
-            User.Location = new Point(29, 44);
+            User.Location = new Point(184, 34);
             User.Name = "User";
             User.Size = new Size(137, 28);
             User.TabIndex = 0;
             User.Text = "Add Columns";
+            User.Click += User_Click;
             // 
             // dataGridView1
             // 
-            dataGridView1.BackgroundColor = Color.LightSlateGray;
+            dataGridView1.BackgroundColor = Color.Azure;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ID_Generated, average });
-            dataGridView1.GridColor = SystemColors.ActiveBorder;
-            dataGridView1.Location = new Point(272, 116);
+            dataGridView1.GridColor = SystemColors.AppWorkspace;
+            dataGridView1.Location = new Point(252, 118);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.RowTemplate.Height = 29;
-            dataGridView1.Size = new Size(712, 476);
+            dataGridView1.Size = new Size(731, 476);
             dataGridView1.TabIndex = 2;
             dataGridView1.CellEndEdit += dataGridView1_CellContentClick;
             dataGridView1.RowPostPaint += dataGridView1_RowPostPaint;
@@ -164,6 +166,7 @@
             ID_Generated.MinimumWidth = 6;
             ID_Generated.Name = "ID_Generated";
             ID_Generated.ReadOnly = true;
+            ID_Generated.SortMode = DataGridViewColumnSortMode.Programmatic;
             ID_Generated.Width = 125;
             // 
             // average
@@ -172,7 +175,7 @@
             average.MinimumWidth = 6;
             average.Name = "average";
             average.ReadOnly = true;
-            average.SortMode = DataGridViewColumnSortMode.NotSortable;
+            average.SortMode = DataGridViewColumnSortMode.Programmatic;
             average.Width = 125;
             // 
             // Form1
@@ -188,7 +191,6 @@
             Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
             Name = "Form1";
             Text = "Form1";
-            Load += Form1_Load;
             panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
