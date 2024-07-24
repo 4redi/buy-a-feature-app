@@ -4,6 +4,7 @@ using System.Text;
 using System.IO;
 using System.Windows.Forms;
 using System;
+using System.Data.Common;
 
 namespace Buy_a_feature_app
 {
@@ -20,6 +21,7 @@ namespace Buy_a_feature_app
             User.Text = "Add Columns";
             CellValidatingEvent();
             dataGridView1.CellEndEdit += dataGridView1_CellEndEdit;
+            dataGridView1.RowTemplate.Height = 80;
 
 
         }
@@ -270,6 +272,27 @@ namespace Buy_a_feature_app
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
+        }
+
+        private void deletecol_Click(object sender, EventArgs e)
+        {
+            string colname= deletecolumn.Text;
+            try
+            {
+                if (colname==""){
+                    MessageBox.Show("Dont click unless you want to remove a column", "Error",MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                else
+                {
+                    dataGridView1.Columns.Remove(colname);
+                }
+            }
+
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
